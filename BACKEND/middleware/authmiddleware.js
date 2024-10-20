@@ -1,41 +1,34 @@
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 function authMiddleware(req, res, next) {
   // Get the Authorization header
-  const authHeader = req.header('Authorization');
-  
-  // Log the Authorization header for debugging purposes
-  console.log('Authorization Header:', authHeader);
-  
-  // Check if the header exists and is in the correct format (starts with "Bearer")
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return res.status(401).json({ error: 'No token provided' });
+  const authHeader = req.header("Authorization");
+
+  console.log("Authorization Header:", authHeader);
+
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return res.status(401).json({ error: "No token provided" });
   }
 
-  // Extract the token by removing the "Bearer " prefix
-  const token = authHeader.replace('Bearer ', '');
-  console.log('Extracted Token:', token); // Log the token for debugging
+  const token = authHeader.replace("Bearer ", "");
+  console.log("Extracted Token:", token);
 
   try {
     // Verify the token using the secret from the environment variable
     const secret = process.env.ACCESS_SECRET_TOKEN;
-    console.log('JWT Secret:', secret); // Log the secret (only for debugging, remove later)
+    console.log("JWT Secret:", secret);
 
     const decoded = jwt.verify(token, secret);
-    console.log('Decoded JWT Payload:', decoded); // Log the decoded payload
+    console.log("Decoded JWT Payload:", decoded);
 
-    // Attach the userId from the decoded token to the request object
     req.userId = decoded.userId;
     req.userEmail = decoded.userEmail;
-    
-    // Move to the next middleware or route handler
+
     next();
   } catch (err) {
-    // Log the error if token verification fails
-    console.error('JWT Verification Error:', err.message);
+    console.error("JWT Verification Error:", err.message);
 
-    // Send an error response for invalid token
-    return res.status(401).json({ error: 'Invalid token. Please try again' });
+    return res.status(401).json({ error: "Invalid token. Please try again" });
   }
 }
 
