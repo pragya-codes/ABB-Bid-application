@@ -7,7 +7,7 @@ function BidInfo({ label, amount }) {
         {label}
       </div>
       <div className="self-stretch my-auto text-2xl font-extrabold">
-        {amount}
+       $ {amount}
       </div>
     </div>
   );
