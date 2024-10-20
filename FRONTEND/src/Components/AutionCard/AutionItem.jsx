@@ -22,7 +22,7 @@ function AuctionItem({item}) {
         <BidInfo label="Current Bid" amount={item.currentBid} />
         <CountdownTimer endTime={item.endDate} />
       </div>
-      <BidButton />
+      <BidButton itemid={item._id}/>
     </article>
   );
 }

@@ -41,6 +41,16 @@ router.get('/', authMiddleware, async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  try {
+    const auction = await Auction.findById(req.params.id);
+    if (!auction) return res.status(404).json({ error: 'Auction not found' });
+    res.status(200).json(auction);
+  } catch (error) {
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
 module.exports = router;
 
 //imagelinkformat -   https://drive.google.com/uc?export=view&id=1ftbDkm2OLVWvC7p204UjOxaz8fr1KNM8

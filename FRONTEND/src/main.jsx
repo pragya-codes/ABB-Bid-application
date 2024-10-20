@@ -13,6 +13,7 @@ import LoginPage from './Pages/LoginPage/LoginPage.jsx';
 import SignUpPage from './Pages/SignUpPage/SignUpPage.jsx';
 import SignUpSuccess from './Pages/SignUpPage/SignUpSuccess.jsx';
 import ExplorePage from './Pages/HomePage/ExplorePage.jsx';
+import DetailsPage from './Pages/DetailsPage/Details.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "explorepage",
         element: <ExplorePage />,
+      },
+      {
+        path: "details/:id",
+        element: <DetailsPage />,
       }
     ],
   },
