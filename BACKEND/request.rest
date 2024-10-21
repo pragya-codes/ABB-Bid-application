@@ -1,44 +1,42 @@
-GET http://localhost:5000/api/auction/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE0YTE0ZGI4YjAyM2M2Njk3NWRmZTYiLCJpYXQiOjE3Mjk0MDUyNjl9.FxGGflbR3NXJ_l1NU014PeMBMhWVdgTL80eHGhogc6M
 
-###
-GET http://localhost:5000/api/auction/6714c7cec2add7a5bd01d0f2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE0YTE0ZGI4YjAyM2M2Njk3NWRmZTYiLCJpYXQiOjE3Mjk0MDUyNjl9.FxGGflbR3NXJ_l1NU014PeMBMhWVdgTL80eHGhogc6M
-
-###
-POST http://localhost:5000/api/auction/create
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE0YTE0ZGI4YjAyM2M2Njk3NWRmZTYiLCJpYXQiOjE3Mjk0MDUyNjl9.FxGGflbR3NXJ_l1NU014PeMBMhWVdgTL80eHGhogc6M
-Content-Type: application/json
-
-# {
-#     "title":"Honor Security Camera",
-#     "image": "https://drive.google.com/uc?export=view&id=1nVAjfDAcyDtreMT1jSBj4bVOUFQcH0jN",
-#     "description" :"The Honor Security Camera is the perfect solution for keeping your home or office safe with cutting-edge surveillance technology. This compact yet powerful camera offers full HD 1080p resolution, ensuring crystal-clear video quality, whether it's day or night. Equipped with infrared night vision, the camera can monitor areas up to 30 feet away in total darkness, making it ideal for 24/7 security. The Honor Security Camera also features 360-degree horizontal and 90-degree vertical rotation, providing a complete view of your surroundings with no blind spots. Motion detection capabilities send real-time alerts to your phone whenever movement is detected, allowing you to react quickly in case of unusual activity. The built-in microphone and speaker support two-way audio, so you can communicate with family members, pets, or visitors directly through the camera. Easily controllable via a mobile app, you can monitor your property from anywhere in the world. With secure cloud storage options and local SD card support, you’ll have peace of mind knowing that your video footage is safe and accessible at all times. Designed for both indoor and outdoor use, the Honor Security Camera is weatherproof, ensuring it will continue to perform in rain or shine. Whether you're looking to enhance your home security or monitor your business, the Honor Security Camera is a reliable and versatile choice.",
-#     "startingBid": 224,
-#     "currentBid": 257,
-#     "endDate": "2024-11-15"
-# }
-
-###
+### Register new User (Press on "Send Request" button below to make the call)
 POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-  "username": "Pragya",
-  "email": "pragya21@gmail.com",
-  "password": "123testing"
+  "username": "Interviewer",
+  "email": "interview@gmail.com",
+  "password": "interview123"
 }
 
-###
+### Fetches all existing users
 GET http://localhost:5000/api/auth/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE0YTE0ZGI4YjAyM2M2Njk3NWRmZTYiLCJpYXQiOjE3Mjk0MDUyNjl9.FxGGflbR3NXJ_l1NU014PeMBMhWVdgTL80eHGhogc6M
+Authorization: Bearer <enter your jwt token in plain text here...>
 
-###
+### Login existing user and generates token
 POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "pragya21@gmail.com",
-  "password": "123testing"
+  "email": "interview@gmail.com",
+  "password": "interview123"
 }
+
+### Fetches all Auction Item for the user
+GET http://localhost:5000/api/auction/
+Authorization: Bearer <enter your jwt token in plain text here...>
+
+### Creates new Auction Item. See the Example and remove the comment symbol to use it
+POST http://localhost:5000/api/auction/create
+Authorization: Bearer <enter your jwt token in plain text here...>
+Content-Type: application/json
+
+# {
+#     "title":"Kodak Vintage Camera",
+#     "image": "https://images.pexels.com/photos/51383/photo-camera-subject-photographer-51383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+#     "description" :"This Kodak Vintage Camera is old but the most powerful camera you can have to take picturesque snapshots, videos, etc. This compact yet powerful camera offers full HD 1080p resolution, ensuring crystal-clear video quality, whether it's day or night. ",
+#     "startingBid": 524,
+#     "currentBid": 600,
+#     "endDate": "2024-12-15"
+# }
 
