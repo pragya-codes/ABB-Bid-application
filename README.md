@@ -1,5 +1,7 @@
 # ABB-Bid-application
 This is a full-stack online auction application built using the MERN stack (MongoDB, Express, React, Node.js). The application is connected to a MongoDB Atlas database, which is hosted in the cloud. 
+> Live Video Link : [Watch the video here](https://drive.google.com/file/d/1G64R08WT4mkMCGkpAJXQTVlUp_wB3s3G/view?usp=sharing)
+
 > ### **Note** : 
 > Please email me on `pragya21offc@gmail.com` if you have any further queries or if you face issue in setting up the project on your local environment.
 
