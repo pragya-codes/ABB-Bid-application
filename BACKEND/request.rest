@@ -2,6 +2,10 @@ GET http://localhost:5000/api/auction/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE0YTE0ZGI4YjAyM2M2Njk3NWRmZTYiLCJpYXQiOjE3Mjk0MDUyNjl9.FxGGflbR3NXJ_l1NU014PeMBMhWVdgTL80eHGhogc6M
 
 ###
+GET http://localhost:5000/api/auction/6714c7cec2add7a5bd01d0f2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE0YTE0ZGI4YjAyM2M2Njk3NWRmZTYiLCJpYXQiOjE3Mjk0MDUyNjl9.FxGGflbR3NXJ_l1NU014PeMBMhWVdgTL80eHGhogc6M
+
+###
 POST http://localhost:5000/api/auction/create
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE0YTE0ZGI4YjAyM2M2Njk3NWRmZTYiLCJpYXQiOjE3Mjk0MDUyNjl9.FxGGflbR3NXJ_l1NU014PeMBMhWVdgTL80eHGhogc6M
 Content-Type: application/json

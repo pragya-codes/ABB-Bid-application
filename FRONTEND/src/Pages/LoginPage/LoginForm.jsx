@@ -40,10 +40,10 @@ function LoginForm() {
       const data = await response.json();
 
       if (response.ok) {
-        // Optionally store user information (username) in localStorage
+        // Optionally store user information (username) in sessionStorage
         
-        localStorage.setItem("token", data.token); 
-        localStorage.setItem('username', data.username);
+        sessionStorage.setItem("token", data.token); 
+        sessionStorage.setItem('username', data.username);
         
         // Successfully logged in
         setSuccess("Login successful!");

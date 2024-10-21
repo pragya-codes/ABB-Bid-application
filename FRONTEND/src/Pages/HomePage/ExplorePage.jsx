@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import AuctionItem from "../../Components/AutionCard/AutionItem";
 
 function ExplorePage() {
-  const username = localStorage.getItem("username");
-  const token = localStorage.getItem("token");
+  const username = sessionStorage.getItem("username");
+  const token = sessionStorage.getItem("token");
   const [auctionItems, setAuctionItems] = useState([]);
   useEffect(() => {
     // Function to fetch auction items

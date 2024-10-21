@@ -6,7 +6,8 @@ function BidButton({itemid}) {
   return (
     <div className="flex gap-3 items-start mt-6 w-full text-base font-semibold leading-none text-white">
       <button
-      onClick={()=>{navigate(`/details/${itemid}`)}}
+      
+      onClick={() => navigate(`/${itemid}`, { state: { item_id: itemid } })}
         style={{
           background:
             "linear-gradient(79.69deg, #1D4ED8 -0.64%, #5AD7FE 107.84%)",

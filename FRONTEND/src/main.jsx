@@ -14,6 +14,7 @@ import SignUpPage from './Pages/SignUpPage/SignUpPage.jsx';
 import SignUpSuccess from './Pages/SignUpPage/SignUpSuccess.jsx';
 import ExplorePage from './Pages/HomePage/ExplorePage.jsx';
 import DetailsPage from './Pages/DetailsPage/Details.jsx';
+import Submission from './Pages/DetailsPage/Submission.jsx';
 
 const router = createBrowserRouter([
   {
@@ -48,9 +49,14 @@ const router = createBrowserRouter([
         element: <ExplorePage />,
       },
       {
-        path: "details/:id",
+        path: ":id",
         element: <DetailsPage />,
+      },
+      {
+        path: "submissionmodal",
+        element: <Submission />,
       }
+      
     ],
   },
 ]);
