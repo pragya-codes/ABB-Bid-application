@@ -54,16 +54,14 @@ ACCESS_SECRET_TOKEN=your_jwt_secret_key
    - ACCESS_SECRET_TOKEN: A secret key used for JSON Web Token authentication. You can generate any random string for this.
 
 2. Provide the MongoDB Connection String
-To connect to my database, I have already set up access. Here are the details:
-
-Connection String: In the .env file you created, replace `<db-username>, <db-password>, and <database>` with the following values:
+To connect to my database, I have already set up access. Here are the details for **Connection String**: In the .env file you created, replace `<db-username>, <db-password>, and <database>` with the following values:
 
 ```
 MONGODB_URI="mongodb+srv://<db_username>:<db_password>@abb.nn9tt.mongodb.net/?retryWrites=true&w=majority&appName=<database>"
 ```
-- Username: `<db-username>` : interviewUser
-- Password: `<db-password>` : interviewPassword123
-- Database: `<database>` : ABB
+-  `<db-username>` : interviewUser
+-  `<db-password>` : interviewPassword123
+-  `<database>` : ABB
 
 This will connect you to my MongoDB Atlas database where I've seeded the initial auction data.
 
