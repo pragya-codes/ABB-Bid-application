@@ -16,6 +16,7 @@ function DetailsPage() {
   const token = sessionStorage.getItem("token");
 
   const [itemdetails, setItemDetails] = useState(null);
+  const [bidhistorydetails, setbidhistorydetails] = useState(null);
   useEffect(() => {
     // Function to fetch auction items
     const fetchitemdetails = async () => {
@@ -34,7 +35,8 @@ function DetailsPage() {
 
         const data = await response.json();
         console.log(data); // Log the response data in console
-        setItemDetails(data); // Set the auctions state with the fetched data
+        setItemDetails(data?.auction); // Set the auctions state with the fetched data
+        setbidhistorydetails(data?.bidhistory.bidHistory)
       } catch (error) {
         console.error("Error fetching auctions:", error);
       }
@@ -62,7 +64,7 @@ function DetailsPage() {
         </section>
         <aside className="flex flex-col ml-5 w-[25%] max-md:ml-0 max-md:w-full">
           <div className="flex flex-col mt-9 w-full text-base font-semibold max-md:mt-10">
-            <BidHistory />
+           {bidhistorydetails && <BidHistory bidhistory={bidhistorydetails}/>}
             {itemdetails && <SubmitBid auctionitemid={item_id} />}
           </div>
         </aside>

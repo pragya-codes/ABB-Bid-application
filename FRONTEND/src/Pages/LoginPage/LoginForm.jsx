@@ -44,7 +44,7 @@ function LoginForm() {
         
         sessionStorage.setItem("token", data.token); 
         sessionStorage.setItem('username', data.username);
-        
+        sessionStorage.setItem("userId", data.userId );
         // Successfully logged in
         setSuccess("Login successful!");
       

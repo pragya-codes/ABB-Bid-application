@@ -30,7 +30,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/api/auth/me
+GET http://localhost:5000/api/auth/users
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE0YTE0ZGI4YjAyM2M2Njk3NWRmZTYiLCJpYXQiOjE3Mjk0MDUyNjl9.FxGGflbR3NXJ_l1NU014PeMBMhWVdgTL80eHGhogc6M
 
 ###
@@ -41,3 +41,4 @@ Content-Type: application/json
   "email": "pragya21@gmail.com",
   "password": "123testing"
 }
+
